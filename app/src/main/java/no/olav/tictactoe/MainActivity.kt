@@ -13,9 +13,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    var playerClear = ArrayList<Button>()
+
     fun btnClick(view: View) {
 
         val btnSelected = view as Button
+
+        playerClear.add(btnSelected)
 
         var cellId = 0
         when (btnSelected.id) {
@@ -58,6 +62,22 @@ class MainActivity : AppCompatActivity() {
         btnSelected.isEnabled = false
 
         checkWinner()
+    }
+
+    // Function to play game again
+    fun newGame(view: View) {
+        val playAgainBtn = findViewById<Button>(R.id.btnPlayAgain)
+
+        for (btn in playerClear) {
+            btn.text = ""
+            btn.setBackgroundResource(R.color.whiteIsh)
+            btn.isEnabled = true
+        }
+
+        player1.clear()
+        player2.clear()
+        playerClear.clear()
+
     }
 
 

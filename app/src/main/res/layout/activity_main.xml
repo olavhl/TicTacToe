@@ -142,6 +142,7 @@
             android:layout_height="25pt"
             android:background="@color/cardview_dark_background"
             android:text="PLAY AGAIN"
+            android:onClick="newGame"
             android:textColor="@color/whiteIsh"
             app:backgroundTintMode="multiply" />
     </LinearLayout>
